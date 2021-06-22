@@ -98,10 +98,12 @@ class Suggest(commands.Cog):
             )
 
             
-    @commands.Cog.listener()
-    async def on_command_error(ctx, error):
-        if isinstance(error, MissingRole):
-            await ctx.send("You are missing permission(s) to run this command.")
+            
+            
+    @suggest.error
+    async def sleep_error(ctx, error):
+        if isinstance(error, commands.MissingPermissions):
+            await ctx.send("You cant do that!")
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMIN)
     async def approve(self, ctx, suggestion_id: int, *, message=None):
