@@ -97,11 +97,6 @@ class Suggest(commands.Cog):
                 )
             )
 
-            
-    @commands.Cog.listener()
-    async def on_command_error(ctx, error)
-        if isinstance(error, commands.MissingRole)
-            await ctx.send("Try Again")
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMIN)
     async def approve(self, ctx, suggestion_id: int, *, message=None):
