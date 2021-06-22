@@ -102,7 +102,7 @@ class Suggest(commands.Cog):
             
     @suggest.error
     async def suggest_error(ctx, error):
-        if isinstance(error, commands.errors.MissingRole):
+        if isinstance(error, commands.MissingPermissions):
             await ctx.send("You cant do that!")
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMIN)
