@@ -33,7 +33,7 @@ class Suggest(commands.Cog):
 
     @commands.command()
     @commands.cooldown(1, 20, commands.BucketType.member)
-    @checks.has_permissions(PermissionLevel.REGULAR)
+    @commands.has_role('Level 05')
     async def suggest(self, ctx, *, suggestion):
         """
         Suggest something!
