@@ -101,7 +101,7 @@ class Suggest(commands.Cog):
             
             
     @suggest.error
-    async def sleep_error(ctx, error):
+    async def suggest_error(ctx, error):
         if isinstance(error, commands.MissingRole):
             await ctx.send("You cant do that!")
     @commands.command()
