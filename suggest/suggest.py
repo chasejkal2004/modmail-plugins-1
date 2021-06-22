@@ -68,6 +68,8 @@ class Suggest(commands.Cog):
                     )
                     embed.add_field(name="Suggestion", value=suggestion, inline=False)
                     message = await suggestion_channel.send(embed=embed)
+                    await message.add_reaction('✅')
+                    await message.add_reaction('❌')
                     await self.coll.find_one_and_update(
                         {"_id": "suggestions"},
                         {
