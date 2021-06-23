@@ -11,5 +11,12 @@ class Say(commands.Cog):
         await ctx.send(message.replace("@everyone", "@\u200beveryone").replace("@here", "@\u200bhere"))
         await ctx.message.delete()
 
+
+    @commands.command(pass_context=True)
+    async def addrole(ctx):
+        thread = ctx.thread
+        member = thread.recipient
+        role = get(member.server.roles, name="Member")
+        await comamnds.add_roles(member, role)
 def setup(bot):
     bot.add_cog(Say(bot))
