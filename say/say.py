@@ -11,6 +11,6 @@ class Say(commands.Cog):
         thread = ctx.thread
         member = thread.recipient
         role = get(member.server.roles, name="Member")
-        await comamnds.add_roles(member, role)
+        await ctx.add_roles(member, role)
 def setup(bot):
     bot.add_cog(Say(bot))
